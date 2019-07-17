@@ -26,42 +26,6 @@ views:
       documentation_link: http://mssp-templates.readthedocs.io
       next: simpledemo
 
-# demo flow today
-# simpledemo
-# gsbworkflow02
-# deployfw
-
-# updated flow for staging
-# simpledemo_staging
-# deployfw_staging
-# gsbworkflow02_staging
-
-  - name: simpledemo_staging
-    class: VistoqChooseSnippetView
-    menu: Simple Security Service Demos
-    menu_option: Basic Internet Gateway with Staging
-    attributes:
-      snippet: cnc-conf-gsb-panorama
-      header: Initial Service Request
-      title: Select Service Options
-      next_url: deployfw_staging
-
-  - name: gsbworkflow02_staging
-    class: GsbWorkflow02Staging
-    attributes:
-      header: Provisioning Inputs
-      title: Add Configuration Data
-      base_html: vistoq/base.html
-
-  - name: deployfw_staging
-    class: DeployServiceView
-    menu: Deploy
-    menu_option: Deploy Firewall
-    attributes:
-      header: VM-Series Deployment
-      title: Deployment Information
-      next_url: gsbworkflow02_staging
-
   - name: simpledemo
     class: VistoqChooseSnippetView
     menu: Simple Security Service Demos
