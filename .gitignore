@@ -1,7 +1,13 @@
 .idea
 venv
+venv3
+**/snippets/**/
+!**/snippets/app
+!**/snippets/app/**
+!**/snippets/app/**/*
 __pycache__
 *pyc
 app/db.sqlite3
 local.env
 env
+.DS_Store
