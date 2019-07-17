@@ -1,0 +1,214 @@
+<?xml version="1.0"?>
+<config version="8.1.0" urldb="paloaltonetworks">
+  <mgt-config>
+    <devices/>
+    <users>
+      <entry name="admin">
+        <phash>$1$wgonelos$8cFyztY8FcftNorslt1Ms.</phash>
+        <permissions>
+          <role-based>
+            <superuser>yes</superuser>
+          </role-based>
+        </permissions>
+        <public-key>c3NoLXJzYSBBQUFBQjNOemFDMXljMkVBQUFBREFRQUJBQUFCQVFDMi9QN09ZaGJySEtSSG1HWDBDaStWL1A1dFRidm1KOXoyQXE3QTk2aVVReHllWWw0aXZ3QTFFUXRqRVIyWXhrSm15ZjN3cmZ5V1pPUTkrWEtMUERlNkZ0UUZJWS9ZWmZGU21yTEs0M2tFSnNVQmJ2LzR1bTJuV1RqcFlEajFWREozeHlIQmdDMk0zRjJQSG9tTnRPa3lGNVZsZjRTK3JaWHNlZ0NKdlZkR0IxZ3JhY0U1aTB3SDh1S1l1NlFkQk1zMVVTT01wYnQvMDRGVy9NRDRLQldwL1NBWWdjcUJndytqT1VhM2drclBHWDc1dVBJdEZlT3JPYUt0MDZ1Rm1nNklmME9XcUp4N2g1cjRPWVUyaGJUa3lYaHZ2bEpPRlNVb3lKVmMzM0ZYck94RU8xWkJxUXloUWZ1d21nKytaWm9za3lmVFRDUmhPZ255K3lIK2ZpT3AgYWRtaW4K</public-key>
+        <preferences>
+          <saved-log-query>
+            <system>
+              <entry name="hide login errors">
+                <query>( eventid neq auth-fail ) and not (description contains 'Failed')</query>
+              </entry>
+            </system>
+          </saved-log-query>
+        </preferences>
+      </entry>
+    </users>
+  </mgt-config>
+  <shared/>
+  <devices>
+    <entry name="localhost.localdomain">
+      <deviceconfig>
+        <system>
+          <update-server>updates.paloaltonetworks.com</update-server>
+          <update-schedule>
+            <threats>
+              <recurring>
+                <weekly>
+                  <day-of-week>wednesday</day-of-week>
+                  <at>01:02</at>
+                  <action>download-only</action>
+                </weekly>
+              </recurring>
+            </threats>
+            <anti-virus>
+              <recurring>
+                <hourly>
+                  <at>13</at>
+                  <action>download-and-install</action>
+                </hourly>
+              </recurring>
+            </anti-virus>
+          </update-schedule>
+          <timezone>US/Pacific</timezone>
+          <service>
+            <disable-telnet>yes</disable-telnet>
+            <disable-http>yes</disable-http>
+          </service>
+          <type>
+            <dhcp-client>
+              <send-hostname>yes</send-hostname>
+              <send-client-id>no</send-client-id>
+              <accept-dhcp-hostname>no</accept-dhcp-hostname>
+              <accept-dhcp-domain>no</accept-dhcp-domain>
+            </dhcp-client>
+          </type>
+          <hostname>vistoq-panorama</hostname>
+          <dns-setting>
+            <servers>
+              <primary>8.8.8.8</primary>
+              <secondary>8.8.4.4</secondary>
+            </servers>
+          </dns-setting>
+          <deployment-update-schedule>
+            <entry name="anti-virus">
+              <anti-virus>
+                <recurring>
+                  <hourly>
+                    <action>
+                      <download-only/>
+                    </action>
+                    <at>23</at>
+                  </hourly>
+                </recurring>
+              </anti-virus>
+            </entry>
+            <entry name="app_and_threat">
+              <app-and-threat>
+                <recurring>
+                  <every-30-mins>
+                    <at>17</at>
+                    <action>
+                      <download-only/>
+                    </action>
+                  </every-30-mins>
+                </recurring>
+              </app-and-threat>
+            </entry>
+          </deployment-update-schedule>
+        </system>
+        <setting>
+          <management>
+            <storage-partition>
+              <internal/>
+            </storage-partition>
+            <hostname-type-in-syslog>FQDN</hostname-type-in-syslog>
+            <initcfg>
+              <type>
+                <dhcp-client>
+                  <send-hostname>yes</send-hostname>
+                  <send-client-id>no</send-client-id>
+                  <accept-dhcp-hostname>no</accept-dhcp-hostname>
+                  <accept-dhcp-domain>no</accept-dhcp-domain>
+                </dhcp-client>
+              </type>
+              <public-key>c3NoLXJzYSBBQUFBQjNOemFDMXljMkVBQUFBREFRQUJBQUFCQVFDMi9QN09ZaGJySEtSSG1HWDBDaStWL1A1dFRidm1KOXoyQXE3QTk2aVVReHllWWw0aXZ3QTFFUXRqRVIyWXhrSm15ZjN3cmZ5V1pPUTkrWEtMUERlNkZ0UUZJWS9ZWmZGU21yTEs0M2tFSnNVQmJ2LzR1bTJuV1RqcFlEajFWREozeHlIQmdDMk0zRjJQSG9tTnRPa3lGNVZsZjRTK3JaWHNlZ0NKdlZkR0IxZ3JhY0U1aTB3SDh1S1l1NlFkQk1zMVVTT01wYnQvMDRGVy9NRDRLQldwL1NBWWdjcUJndytqT1VhM2drclBHWDc1dVBJdEZlT3JPYUt0MDZ1Rm1nNklmME9XcUp4N2g1cjRPWVUyaGJUa3lYaHZ2bEpPRlNVb3lKVmMzM0ZYck94RU8xWkJxUXloUWZ1d21nKytaWm9za3lmVFRDUmhPZ255K3lIK2ZpT3AgYWRtaW4K</public-key>
+            </initcfg>
+          </management>
+        </setting>
+      </deviceconfig>
+      <device-group>
+        <entry name="staging">
+          <devices/>
+        </entry>
+      </device-group>
+      <template>
+        <entry name="staging_template">
+          <settings>
+            <default-vsys>vsys1</default-vsys>
+          </settings>
+          <config>
+            <devices>
+              <entry name="localhost.localdomain">
+                <vsys>
+                  <entry name="vsys1"/>
+                </vsys>
+              </entry>
+            </devices>
+          </config>
+        </entry>
+      </template>
+      <template-stack>
+        <entry name="staging">
+          <templates>
+            <member>staging_template</member>
+          </templates>
+          <devices/>
+        </entry>
+      </template-stack>
+    </entry>
+  </devices>
+  <readonly>
+    <devices>
+      <entry name="localhost.localdomain">
+        <device-group>
+          <entry name="staging">
+            <id>150</id>
+          </entry>
+        </device-group>
+        <template>
+          <entry name="staging_template">
+            <id>148</id>
+          </entry>
+        </template>
+        <template-stack>
+          <entry name="staging">
+            <id>149</id>
+          </entry>
+        </template-stack>
+      </entry>
+    </devices>
+    <max-internal-id>154</max-internal-id>
+  </readonly>
+  <panorama>
+    <log-settings>
+      <http>
+        <entry name="vistoq-controller">
+          <server>
+            <entry name="controller-01">
+              <address>10.128.0.2</address>
+              <http-method>POST</http-method>
+              <protocol>HTTP</protocol>
+              <port>9000</port>
+            </entry>
+          </server>
+          <format>
+            <system>
+              <headers>
+                <entry name="Content-Type">
+                  <value>application/json</value>
+                </entry>
+              </headers>
+              <name>vistoq-device-connected</name>
+              <url-format>/hook/vistoq/device-connected</url-format>
+              <payload>{
+"device_name": "$device_name",
+"serial": "$serial",
+"description": "$opaque"
+}</payload>
+            </system>
+          </format>
+        </entry>
+      </http>
+      <system>
+        <match-list>
+          <entry name="new_device_in_staging">
+            <send-http>
+              <member>vistoq-controller</member>
+            </send-http>
+            <filter>(description contains 'Panorama push to device') and (description contains staging) and (description contains succeeded)</filter>
+            <description>Send logs when a new device connects and has a successful config push</description>
+          </entry>
+        </match-list>
+      </system>
+    </log-settings>
+  </panorama>
+</config>
